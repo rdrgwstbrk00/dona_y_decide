@@ -39,7 +39,7 @@ def renderLogin(request):
             return redirect('home')  # Redirigir a la página de inicio después de iniciar sesión
         else:
             return HttpResponse('Invalid login details')  # Manejar el error de autenticación
-    return render(request, 'PortafolioApp/home.html')  # Renderizar el formulario de login si el método no es POST
+    return render(request, 'PortafolioApp/home.html')  # Renderizar el formulario de login si el método no es POS
 
 
 def Contacto(request):

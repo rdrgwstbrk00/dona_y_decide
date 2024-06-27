@@ -1,0 +1,151 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías de Campañas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/campanas.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'img/image-7.png' %}" alt="logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'campanas' %}">Campañas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    {% if user_type == 'admin' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'productos_donados' %}">Productos donados</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Encuestas
+                        </a>
+
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'ver_encuestas' %}">Ver</a></li>
+                          <li><a class="dropdown-item" href="{% url 'crear_encuesta' %}">Crear</a></li>
+                        </ul>
+                    </li>
+                            {% endif %}
+                        {% endif %}
+                    <!-- Opciones para tipos de usuario -->
+                    {% if user.is_authenticated %}
+                        {% if user_type == 'admin' %}
+                            <li class="nav-item">
+                               <li class="nav-link"> Dashboard Admin</li>
+                            </li>
+                        {% elif user_type == 'company' %}
+                            <li class="nav-item">
+                                <li class="nav-link">Dashboard Empresa</li>
+                            </li>
+                        {% elif user_type == 'natural' %}
+                            <li class="nav-item">
+                                <li class="nav-link"> Dashboard Usuario Natural</li>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+                {% if user.is_authenticated %}
+                    <span class="navbar-text me-3">Hola, {{ user.username }}</span>
+                    <a class="btn btn-outline-primary mx-3" href="{% url 'logout' %}">Cerrar sesión</a>
+                {% else %}
+                    <a class="btn btn-outline-primary mx-3" href="{% url 'login' %}">Ingresar</a>
+                    <a class="btn btn-primary" href="{% url 'signup' %}">Registrar</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <p>por si aparece</p>
+    </nav>
+    <header>
+        <h1>Categorías de Campañas</h1>
+    </header>
+    <main>
+        <div class="category-container">
+            <div class="category">
+                <a href="../Portafolio/salud">
+                    <img src="/static/img/Areaasalud.jpeg" alt="area" class="area">
+                    <h2>Salud</h2>
+                </a>
+            </div>
+
+            <div class="category">
+                <a href="../Portafolio/emergencia">
+                    <img src="/static/img/Catastrofes.jpg" alt="Emergencia">
+                    <h2>Catastrofes Naturales</h2>
+                </a>
+            </div>
+            <div class="category">
+                <a href="../Portafolio/emergencia">
+                    <img src="/static/img/Asociacion-discapacitados.jpg" alt="Emergencia">
+                    <h2>Discapacitados</h2>
+                </a>
+            </div>
+            <div class="category">
+                <a href="../Portafolio/emergencia">
+                    <img src="/static/img/Animales.webp">
+                    <h2>Animales</h2>
+                </a>
+            </div>
+            <div class="category">
+                <a href="../Portafolio/emergencia">
+                    <img src="/static/img/Coaniquem.jpg" alt="Emergencia">
+                    <h2>Coaniquem</h2>
+                </a>
+            </div>
+            <div class="category">
+                <a href="../Portafolio/emergencia">
+                    <link rel="stylesheet" href="../Portafolio/salud">
+                    <img src="/static/img/viviendas.png" alt="Emergencia">
+                    <h2>Viviendas</h2>
+                </a>
+            </div>
+            
+            <!-- Añade más categorías según sea necesario -->
+        </div>
+    </main>
+
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2022 Company, Inc</p>
+    </footer>
+</body>
+
+</html>
+
+

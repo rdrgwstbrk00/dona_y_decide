@@ -1,0 +1,177 @@
+/* Estilo para el logo */
+.logo {
+    width: 80px;
+    border-radius: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #d4a373;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+
+.category {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    overflow: hidden;
+    text-align: center;
+    width: 370px;
+}
+
+.category a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.category img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.category h2 {
+    margin: 0;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+
+.logo {
+    width: 80px;
+    border-radius: 100%;
+}
+
+/* CSS para el home de la página */
+
+/* Importar la fuente Merriweather de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+/* Importar la fuente Merriweather de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f6f1;
+    /* Fondo beige claro */
+    color: #333;
+    /* Color de texto oscuro para buena legibilidad */
+}
+
+.navbar {
+    background-color: #fff;
+    /* Fondo blanco para la barra de navegación */
+    border-bottom: 1px solid #e3e3e3;
+    /* Borde inferior sutil */
+}
+
+.nav-link {
+    color: #7f6d4e !important;
+    /* Color beige medio para enlaces de navegación */
+}
+
+.nav-link:hover {
+    color: #5f4b32 !important;
+    /* Color beige oscuro al pasar el ratón */
+}
+
+.btn-primary {
+    background-color: #d4a373;
+    /* Color beige más oscuro para botones primarios */
+    border-color: #d4a373;
+}
+
+.btn-primary:hover {
+    background-color: #b68c62;
+    /* Color más oscuro al pasar el ratón */
+    border-color: #b68c62;
+}
+
+.btn-outline-primary {
+    color: #d4a373;
+    /* Color beige oscuro para botones outline */
+    border-color: #d4a373;
+}
+
+.btn-outline-primary:hover {
+    background-color: #d4a373;
+    color: #fff;
+}
+
+.card {
+    border: 1px solid #e3e3e3;
+    /* Borde sutil para las tarjetas */
+    border-radius: 8px;
+    /* Bordes redondeados */
+}
+
+.card-title {
+    color: #5f4b32;
+    /* Color de texto beige oscuro para títulos de tarjetas */
+}
+
+.card-text {
+    color: #7f6d4e;
+    /* Color de texto beige medio para el contenido de las tarjetas */
+}
+
+footer {
+    background-color: #fff;
+    /* Fondo blanco para el pie de página */
+    border-top: 1px solid #e3e3e3;
+    /* Borde superior sutil */
+}
+
+.nav-link.px-2.text-muted {
+    color: #7f6d4e !important;
+    /* Color de texto beige medio para enlaces del pie de página */
+}
+
+.nav-link.px-2.text-muted:hover {
+    color: #5f4b32 !important;
+    /* Color de texto beige oscuro al pasar el ratón */
+}
+
+.text-muted {
+    color: #7f6d4e !important;
+    /* Color de texto beige medio */
+}
+
+h2,
+h3 {
+    color: #5f4b32;
+    /* Color de texto beige oscuro para títulos */
+}
+
+.container {
+    background-color: #fff;
+    /* Fondo blanco para contenedores */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.container h2 {
+    color: #5f4b32;
+    /* Color de texto beige oscuro para títulos */
+    margin-bottom: 20px;
+}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Encuestas</title>
+</head>
+<body>
+    <h1>Encuestas Disponibles</h1>
+    <ul>
+        {% for encuesta in encuestas %}
+            <li>
+                {{ encuesta.texto_encuesta }} - {% if encuesta.activa %}Activa{% else %}Desactivada{% endif %}
+                <!-- Formulario para eliminar la encuesta -->
+                <form action="{% url 'eliminar_encuesta' pk=encuesta.pk %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Eliminar</button>
+                </form>
+            </li>
+        {% empty %}
+            <li>No hay encuestas disponibles.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_encuesta' %}">Crear Nueva Encuesta</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- encuestas_app/templates/encuestas_app/responder_encuesta.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Responder Encuesta</title>
+</head>
+<body>
+    <h1>Responder Encuesta</h1>
+    <h2>{{ encuesta.texto_encuesta }}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar Respuesta</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Noticias</title>
+    <link rel="stylesheet" href="/static/css/estiloCrearCampañas.css">
+</head>
+<body>
+    <div class="container mt-5" style="background-color: #F5F5DC; padding: 20px; border-radius: 10px;">
+        <h2>Lista de Noticias</h2>
+        <a href="{% url 'crear_noticia' %}" class="btn btn-primary mb-3">Crear Nueva Noticia</a>
+        <ul class="list-group">
+            {% for noticia in noticias %}
+            <li class="list-group-item" style="background-color: #FFF5E6;">
+                <a href="{% url 'detalle_noticia' noticia.id %}" class="text-decoration-none" style="color: #8B4513;">
+                    {{ noticia.titulo }}
+                </a>
+                <p><strong>Categoría:</strong> {{ noticia.categoria.nombre }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

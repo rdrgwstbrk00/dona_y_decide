@@ -1,0 +1,10 @@
+<!-- eliminar_producto_donado.html -->
+
+<h2>¿Estás seguro de que deseas eliminar el producto donado "{{ producto_donado.nombre }}"?</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Eliminar">
+</form>
+
+<a href="{% url 'productos_donados' %}">Cancelar y volver a la lista de productos donados</a>

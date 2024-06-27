@@ -1,0 +1,29 @@
+{% load static %}
+<!-- crear_editar_categoria.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if categoria %}Editar Categoría{% else %}Crear Categoría{% endif %}</title>
+    <link rel="stylesheet" href="{% static 'estilosCategorias.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{% if categoria %}Editar Categoría{% else %}Crear Categoría{% endif %}</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="{% if categoria %}{{ categoria.nombre }}{% endif %}">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion">{% if categoria %}{{ categoria.descripcion }}{% endif %}</textarea>
+            </div>
+            <button type="submit" class="btn">{% if categoria %}Actualizar{% else %}Crear{% endif %}</button>
+        </form>
+    </div>
+</body>
+</html>

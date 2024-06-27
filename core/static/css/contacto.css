@@ -1,0 +1,31 @@
+/* Estilos para el formulario de contacto */
+form {
+    background-color: #fff; /* Fondo blanco para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.form-label {
+    color: #5f4b32; /* Color de texto beige oscuro para etiquetas */
+}
+
+.form-control {
+    border: 1px solid #e3e3e3; /* Borde sutil para los campos del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.form-control:focus {
+    border-color: #d4a373; /* Color del borde al enfocar */
+    box-shadow: none; /* Elimina la sombra de Bootstrap */
+}
+
+.btn-primary {
+    background-color: #d4a373; /* Color beige más oscuro para botones primarios */
+    border-color: #d4a373;
+}
+
+.btn-primary:hover {
+    background-color: #b68c62; /* Color más oscuro al pasar el ratón */
+    border-color: #b68c62;
+}

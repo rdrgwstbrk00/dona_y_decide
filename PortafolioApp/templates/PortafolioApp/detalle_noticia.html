@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Noticia</title>
+    <link rel="stylesheet" href="/static/css/estiloDetallesNoticias.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+<div class="container mt-5" style="background-color: #F5F5DC; padding: 20px; border-radius: 10px;">
+    <h2>{{ noticia.titulo }}</h2>
+    <img src="{{ noticia.imagen.url }}" alt="{{ noticia.titulo }}" class="img-fluid mt-3">
+    <p class="mt-3"><strong>Categoría:</strong> {{ noticia.categoria.nombre }}</p>
+    <p class="mt-3">{{ noticia.descripcion }}</p>
+    <a href="{% url 'lista_noticias' %}" class="btn btn-secondary mt-3">Volver a la lista</a>
+</div>

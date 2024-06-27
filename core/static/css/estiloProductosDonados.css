@@ -1,0 +1,70 @@
+/* estiloProductosDonados.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5dc; /* Beige background */
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    background-color: #fff8dc; /* Light beige */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #deb887; /* BurlyWood border */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff8dc; /* Light beige container */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #8b4513; /* SaddleBrown for headings */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    background-color: #fffacd; /* LemonChiffon for list items */
+    padding: 10px;
+    border: 1px solid #deb887; /* BurlyWood border */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+ul li h2 {
+    margin: 0 0 10px;
+    color: #8b4513; /* SaddleBrown for subheadings */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #cd853f; /* Peru for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #8b4513; /* Darker shade for hover */
+}

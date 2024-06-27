@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Noticia</title>
+    <link rel="stylesheet" href="/static/css/estiloCrearCampañas.css">
+    
+</head>
+<body>
+    <div class="container mt-5" style="background-color: #F5F5DC; padding: 20px; border-radius: 10px;">
+        <h2>Crear Nueva Noticia</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+        </form>
+    </div>
+</body>
+</html>

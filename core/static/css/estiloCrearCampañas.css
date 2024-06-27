@@ -1,0 +1,53 @@
+/* estiloCrearCampañas.css */
+
+body {
+    background-color: #F5F5DC;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background-color: #FFF5E6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #8B4513;
+}
+
+.btn-primary {
+    background-color: #8B4513;
+    border-color: #8B4513;
+}
+
+.btn-primary:hover {
+    background-color: #A0522D;
+    border-color: #A0522D;
+}
+
+.btn-secondary {
+    background-color: #CDB79E;
+    border-color: #CDB79E;
+}
+
+.btn-secondary:hover {
+    background-color: #D2B48C;
+    border-color: #D2B48C;
+}
+
+.list-group-item {
+    background-color: #FFF5E6;
+    border: none;
+    border-bottom: 1px solid #D2B48C;
+}
+
+.list-group-item a {
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.list-group-item a:hover {
+    color: #A0522D;
+    text-decoration: none;
+}

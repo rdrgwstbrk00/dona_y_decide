@@ -1,0 +1,63 @@
+/* Estilos para detalle_noticia.html */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Color de fondo beige claro */
+    color: #333; /* Color de texto oscuro */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff; /* Fondo blanco para el contenido */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+h1 {
+    color: #555; /* Color de título más oscuro */
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Estilos para imágenes si es necesario */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Estilos para enlaces */
+a {
+    color: #007bff; /* Color de enlace */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para botones si es necesario */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+}

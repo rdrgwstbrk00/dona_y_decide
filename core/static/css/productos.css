@@ -1,0 +1,106 @@
+/* static/css/productos.css */
+
+/* Importar la fuente Merriweather de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+/* Importar la fuente Merriweather de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+/* Reset de márgenes y padding */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el logo */
+.logo {
+    width: 80px;
+    border-radius: 100%;
+}
+
+/* Estilos generales del cuerpo */
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #f5f5f5; /* Beige claro */
+}
+
+/* Contenedor principal de los productos */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: auto;
+}
+
+/* Estilo de cada tarjeta de producto */
+.container .card {
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 20px;
+    text-align: left;
+    transition: all 0.25s;
+    background: #f5f5dc; /* Beige claro */
+    color: #333; /* Texto oscuro */
+}
+
+/* Efecto hover sobre la tarjeta */
+.container .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del producto */
+.container .card img {
+    width: 330px;
+    height: 240px;
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+}
+
+/* Título del producto */
+.container .card h4 {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Precio y detalles del producto */
+.container .card p {
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    color: #555; /* Texto gris */
+}
+
+/* Estilos adicionales para la barra de navegación */
+.header {
+    background-size: cover;
+    min-height: 100px;
+}
+
+.header .navbar {
+    background-color: #f5f5f5 !important; /* Fondo beige claro para la barra de navegación */
+}
+
+/* Estilo para el logo pequeño */
+.logoMod {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: -50px;
+    left: calc(50% - 50px);
+    margin-top: 15%;
+}
+
+/* Placeholder del input */
+::placeholder {
+    color: #888; /* Color gris oscuro para el placeholder */
+}

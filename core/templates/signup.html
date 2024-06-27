@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+{% load static%}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro</title>
+  <link rel="shortcut icon" href="{% static 'img/logoDonaYdecideDef.png'%}">
+  <link rel="stylesheet" href="{% static 'css/estiloRegistroDona_YDecide2.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="login-box">
+    <img src="{% static 'img/logoDonaYdecideDef.png'%}" class="avatar" alt="">
+    <br>
+    {% if messages %}
+    {% for msg in messages %}
+    <div {% if msg.tags %} class="alert alert-{{ msg.tags }} alert-dismissible " {% endif %} role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong class="text-dark">{{ msg }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <br><br>
+    <h1>¡Regístrate aquí!</h1>
+    <form action="" method="POST" id="loginUsuario">
+      {% csrf_token %}
+      <div class="form-group">
+        <!--Nombre de Usuario -->
+        <label for="username">Nombre de Usuario</label>
+        {{ form.username }}
+        <!--Correo -->
+        <label for="email">Correo</label>
+        {{ form.email }}
+        <!--Contraseña -->
+        <label for="password1">Contraseña</label>
+        {{ form.password1 }}
+        <!--Confirmar Contraseña -->
+        <label for="password2">Confirmar Contraseña</label>
+        {{ form.password2 }}
+        <!--Tipo de Usuario -->
+        <label for="user_type">Tipo de Usuario</label>
+        {{ form.user_type }}
+        <!-- Botón -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-light">Registrarse</button>
+          <br>
+          <a href="{% url 'login' %}">¡Iniciar Sesión!</a>
+          <br>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlPILFhosVNubqSMhGxOCLfx6Jj9pLipUpc2gqaHFTwLXfkG3wWfJ5y8EXk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGf/Q1Is7MXgyyIRF1VITowjBIQ+kd32vZZkxwiAX9HX3pdFesMy3txrm19" crossorigin="anonymous"></script>
+</body>
+
+</html>

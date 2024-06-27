@@ -45,20 +45,11 @@ def renderLogin(request):
 def Contacto(request):
     return render(request, 'PortafolioApp/contacto.html')
 
-@login_required
-def Campanas(request):
-    try:
-        profile = Profile.objects.get(user=request.user)
-        user_type = profile.user_type
-    except Profile.DoesNotExist:
-        user_type = None  # Manejar el caso donde no se encuentre el perfil
 
-    context = {
-        'user_type': user_type,
-    }
+def Campanas(request):
     return render(request, 'PortafolioApp/campanas.html')
 
-@login_required
+
 def Home(request):
     try:
         profile = Profile.objects.get(user=request.user)
@@ -71,5 +62,7 @@ def Home(request):
     }
     return render(request, 'PortafolioApp/home.html', context)
 
+def returnHome(request):
+    return render(request, 'PortafolioApp/home.html')
 
 

@@ -25,7 +25,7 @@ urlpatterns = [
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='reset_password_done.html'), name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='reset_password_confirm.html', form_class=NewPasswordForm), name='password_reset_confirm'),
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='reset_password_complete.html'), name='password_reset_complete'),
-    path('productos/', productos, name='productos'),  # Asegúrate de tener la barra inclinada al final
+    path('productos/', productos, name='productos'),  # Asegúrate de tener la barra inclinada al fina
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

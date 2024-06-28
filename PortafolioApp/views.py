@@ -45,6 +45,9 @@ def renderFunciona(request):
 def renderSalud(request):
     return render(request, 'PortafolioApp/salud.html')
 
+def renderPortalPago(request):
+    return render(request, 'PortafolioApp/portal_pago.html')
+
 
 def crear_noticia(request):
     if request.method == 'POST':

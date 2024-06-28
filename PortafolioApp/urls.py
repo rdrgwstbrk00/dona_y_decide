@@ -4,7 +4,7 @@ from PortafolioApp.views import (
     renderHome, renderLogin, renderRegister, renderEncuestas,
     renderProductos, renderCampanas, renderContacto, renderQuienes,
     renderFunciona, renderSalud, crear_noticia, lista_noticias, 
-    detalle_noticia
+    detalle_noticia, renderPortalPago
 )
 from core.views import Home
 from encuestas.views import ver_encuestas, crear_encuesta, donar_producto, productos_donados
@@ -14,6 +14,9 @@ urlpatterns = [
     path('home/', Home, name='home'),
     path('', renderHome, name='index'),
     path('register/', renderRegister, name='register'),
+    path('portal_pago/', renderPortalPago, name='portal_pago'),
+    
+
     path('encuestas/', renderEncuestas, name='encuestas'),
     path('productos/', renderProductos, name='productos'),
     path('campanas/', renderCampanas, name='campanas'),

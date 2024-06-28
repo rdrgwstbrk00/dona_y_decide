@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'returnHome' %}">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'campanas' %}">Campañas</a>
@@ -188,7 +188,7 @@
                     <p class="card-text">Somos una plataforma Web que permite conectar personas y/o empresas con ganas
                         de donar a entenidades que el usuario desee, nosotros somo el medio para hacerlo de una forma
                         amigable, sencilla, segura y cómoda</p>
-                    <a href="../Portafolio/quienes" class="btn btn-primary">Quiero saber más</a>
+                    <a href="{% url 'renderQuienes' %}" class="btn btn-primary">Quiero saber más</a>
                 </div>
             </div>
         </div>

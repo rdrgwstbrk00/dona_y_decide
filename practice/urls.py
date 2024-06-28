@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from core.views import signup,productos,renderLogin,Home
-
+from PortafolioApp.views import renderQuienes
 from core.forms import UserLoginForm, ResetPasswordForm, NewPasswordForm
 
 urlpatterns = [
@@ -17,6 +17,7 @@ urlpatterns = [
     path('encuestas/', include('encuestas.urls')),  # Prefija las rutas para encuestas
 
     path('signup/', signup, name='signup'),
+    path('quienes/', renderQuienes, name='renderQuienes'),
     path('home/', Home, name='home'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html', authentication_form=UserLoginForm), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='reset_password_complete.html'), name='password_reset_complete'),
     path('productos/', productos, name='productos'),  # Asegúrate de tener la barra inclinada al final
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 

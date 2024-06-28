@@ -47,15 +47,30 @@ def Contacto(request):
 
 
 def Campanas(request):
-    return render(request, 'PortafolioApp/campanas.html')
+    if request.user.is_authenticated:
+        try:
+            profile = Profile.objects.get(user=request.user)
+            user_type = profile.user_type
+        except Profile.DoesNotExist:
+            user_type = None  # Manejar el caso donde no se encuentre el perfil
+    else:
+        user_type = None  # Usuarios no autenticados no tienen perfil
+
+    context = {
+        'user_type': user_type,
+    }
+    return render(request, 'PortafolioApp/campanas.html',context)
 
 
 def Home(request):
-    try:
-        profile = Profile.objects.get(user=request.user)
-        user_type = profile.user_type
-    except Profile.DoesNotExist:
-        user_type = None  # Manejar el caso donde no se encuentre el perfil
+    if request.user.is_authenticated:
+        try:
+            profile = Profile.objects.get(user=request.user)
+            user_type = profile.user_type
+        except Profile.DoesNotExist:
+            user_type = None  # Manejar el caso donde no se encuentre el perfil
+    else:
+        user_type = None  # Usuarios no autenticados no tienen perfil
 
     context = {
         'user_type': user_type,

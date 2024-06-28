@@ -18,7 +18,6 @@ urlpatterns = [
     path('productos/', renderProductos, name='productos'),
     path('campanas/', renderCampanas, name='campanas'),
     path('contacto/', renderContacto, name='contacto'),
-    path('quienes/', renderQuienes, name='quienes'),
     path('funciona/', renderFunciona, name='funciona'),
     path('salud/', renderSalud, name='salud'),
     path('donar_producto/', donar_producto, name='donar_producto'),

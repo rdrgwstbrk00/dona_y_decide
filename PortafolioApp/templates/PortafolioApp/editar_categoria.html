@@ -5,24 +5,27 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if categoria %}Editar Categoría{% else %}Crear Categoría{% endif %}</title>
-    <link rel="stylesheet" href="{% static 'estilosCategorias.css' %}">
+    <title>Editar Categoría</title>
+    <link rel="stylesheet" href="{% static 'stylesPrueba.css' %}">
 </head>
 <body>
     <div class="container">
-        <h1>{% if categoria %}Editar Categoría{% else %}Crear Categoría{% endif %}</h1>
-        <form method="POST">
+        <h2>Editar Categoría</h2>
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" value="{% if categoria %}{{ categoria.nombre }}{% endif %}">
+                <label for="id_nombre">Nombre:</label>
+                {{ form.nombre }}
             </div>
             <div class="form-group">
-                <label for="descripcion">Descripción:</label>
-                <textarea id="descripcion" name="descripcion">{% if categoria %}{{ categoria.descripcion }}{% endif %}</textarea>
+                <label for="id_descripcion">Descripción:</label>
+                {{ form.descripcion }}
             </div>
-            <button type="submit" class="btn">{% if categoria %}Actualizar{% else %}Crear{% endif %}</button>
+            <div class="form-group">
+                <label for="id_imagen">Imagen:</label>
+                {{ form.imagen }}
+            </div>
+            <button type="submit" class="btn">Guardar Cambios</button>
         </form>
     </div>
 </body>

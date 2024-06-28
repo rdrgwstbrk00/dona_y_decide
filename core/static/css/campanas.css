@@ -52,17 +52,7 @@ header {
     background-color: #fff;
 }
 
-
-.logo {
-    width: 80px;
-    border-radius: 100%;
-}
-
 /* CSS para el home de la página */
-
-/* Importar la fuente Merriweather de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
-/* Importar la fuente Merriweather de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
 body {
@@ -132,12 +122,6 @@ body {
     /* Color de texto beige medio para el contenido de las tarjetas */
 }
 
-footer {
-    background-color: #fff;
-    /* Fondo blanco para el pie de página */
-    border-top: 1px solid #e3e3e3;
-    /* Borde superior sutil */
-}
 
 .nav-link.px-2.text-muted {
     color: #7f6d4e !important;
@@ -174,4 +158,3 @@ h3 {
     /* Color de texto beige oscuro para títulos */
     margin-bottom: 20px;
 }
-

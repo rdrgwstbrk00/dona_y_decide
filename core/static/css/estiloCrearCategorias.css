@@ -1,0 +1,63 @@
+/* estiloCrearCategorias.css */
+
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f6f1; /* Light beige background */
+    color: #333; /* Dark text for good readability */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White container background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2 {
+    color: #5f4b32; /* Dark beige for headings */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    color: #7f6d4e; /* Medium beige for labels */
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background-color: #d4a373; /* Color beige más oscuro para botones primarios */
+    border-color: #d4a373;
+}
+
+.btn-primary:hover {
+    background-color: #b68c62; /* Color más oscuro al pasar el ratón */
+    border-color: #b68c62;
+}
+
+.btn-outline-primary {
+    color: #d4a373; /* Color beige oscuro para botones outline */
+    border-color: #d4a373;
+}
+
+.btn-outline-primary:hover {
+    background-color: #d4a373;
+    color: #fff;
+}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Encuesta, ResultadoEncuesta,ProductoDonado
 from .forms import EncuestaForm, ResultadoEncuestaForm,ProductoDonadoForm
-
+from core.models import Profile
 def crear_encuesta(request):
     if request.method == 'POST':
         form = EncuestaForm(request.POST)
@@ -60,8 +60,18 @@ def donar_producto(request):
     return render(request, 'donar_producto.html', {'encuestas': encuestas, 'form_encuesta': form_encuesta, 'form_producto': form_producto})
 
 def productos_donados(request):
-    productos = ProductoDonado.objects.all()  # Obtener todos los productos donados
-    return render(request, 'productos_donados.html', {'productos': productos})
+    productos = ProductoDonado.objects.all()
+    try:
+        profile = Profile.objects.get(user=request.user)
+        user_type = profile.user_type
+    except Profile.DoesNotExist:
+        user_type = None  # Manejar el caso donde no se encuentre el perfil
+
+    context = {
+        'productos': productos,
+        'user_type': user_type,
+    }  # Obtener todos los productos donados
+    return render(request, 'productos_donados.html',context)
 
 def eliminar_producto_donado(request, pk):
     # Obtén la instancia del producto donado que se desea eliminar

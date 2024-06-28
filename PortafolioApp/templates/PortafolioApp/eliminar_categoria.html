@@ -3,23 +3,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Categoría</title>
-
-    <link rel="stylesheet" href="{% static 'css/eliminarCategoria.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesPrueba.css' %}">
 </head>
 <body>
     <div class="container">
-        <h1>Eliminar Categoría</h1>
-        
-        <p>¿Estás seguro de que deseas eliminar la categoría "{{ categoria.nombre }}"?</p>
-
-        <form method="POST">
+        <h2>Eliminar Categoría</h2>
+        <p>¿Estás seguro de que deseas eliminar esta categoría?</p>
+        <h3>{{ categoria.nombre }}</h3>
+        <p>{{ categoria.descripcion }}</p>
+        <form method="post">
             {% csrf_token %}
-            <input type="submit" value="Eliminar">
+            <button type="submit" class="btn">Eliminar</button>
+            <a href="{% url 'listar_categorias' %}" class="btn">Cancelar</a>
         </form>
-        
-        <a href="{% url 'listar_categorias' %}">Cancelar y volver a la lista de categorías</a>
     </div>
 </body>
 </html>

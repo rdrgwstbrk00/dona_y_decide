@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
-from .models import Noticia, Categoria
+from .models import Noticia,Categoria
 from .forms import NoticiaForm,CategoriaForm
+from core.models import Profile
 
 # Create your views here.
 
@@ -54,9 +55,15 @@ def crear_noticia(request):
             return redirect('lista_noticias')  # Redirigir a la lista de noticias o donde prefieras
     else:
         form = NoticiaForm()
+    try:
+        profile = Profile.objects.get(user=request.user)
+        user_type = profile.user_type
+    except Profile.DoesNotExist:
+        user_type = None  # Manejar el caso donde no se encuentre el perfil
 
     context = {
         'form': form,
+        'user_type': user_type,
     }
     return render(request, 'PortafolioApp/crear_noticia.html', context)
 
@@ -74,31 +81,43 @@ def detalle_noticia(request, noticia_id):
     }
     return render(request, 'PortafolioApp/detalle_noticia.html', context)
 
-
 def listar_categorias(request):
     categorias = Categoria.objects.all()
+    
     return render(request, 'PortafolioApp/listar_categorias.html', {'categorias': categorias})
 
 def crear_categoria(request):
     if request.method == 'POST':
-        form = CategoriaForm(request.POST)
+        form = CategoriaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('listar_categorias')
     else:
         form = CategoriaForm()
-    return render(request, 'PortafolioApp/crear_categoria.html', {'form': form})
+
+    try:
+        profile = Profile.objects.get(user=request.user)
+        user_type = profile.user_type
+    except Profile.DoesNotExist:
+        user_type = None  # Manejar el caso donde no se encuentre el perfil
+
+    context = {
+        'form': form,
+        'user_type': user_type,
+    }
+
+    return render(request, 'PortafolioApp/crear_categoria.html', context)
 
 def editar_categoria(request, categoria_id):
     categoria = get_object_or_404(Categoria, pk=categoria_id)
     if request.method == 'POST':
-        form = CategoriaForm(request.POST, instance=categoria)
+        form = CategoriaForm(request.POST, request.FILES, instance=categoria)
         if form.is_valid():
             form.save()
             return redirect('listar_categorias')
     else:
         form = CategoriaForm(instance=categoria)
-    return render(request, 'PortafolioApp/editar_categoria.html', {'form': form, 'categoria': categoria})
+    return render(request, 'PortafolioApp/editar_categoria.html', {'form': form})
 
 def eliminar_categoria(request, categoria_id):
     categoria = get_object_or_404(Categoria, pk=categoria_id)

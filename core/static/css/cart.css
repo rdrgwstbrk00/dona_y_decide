@@ -1,0 +1,41 @@
+/* Estilo para el logo */
+.logo {
+    width: 80px;
+    border-radius: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.cart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-header, .cart-footer {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-footer {
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+}
+
+.cart-body {
+    padding: 10px 0;
+}
+
+.cart .row {
+    display: flex;
+    align-items: center;
+}
+
+.cart img {
+    width: 100px;
+    height: auto;
+}

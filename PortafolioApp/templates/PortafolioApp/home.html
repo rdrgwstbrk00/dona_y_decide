@@ -43,45 +43,46 @@
                         <a class="nav-link" href="{% url 'productos_donados' %}">Productos donados</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Encuestas
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Encuestas
                         </a>
 
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'ver_encuestas' %}">Ver</a></li>
-                          <li><a class="dropdown-item" href="{% url 'crear_encuesta' %}">Crear</a></li>
+                            <li><a class="dropdown-item" href="{% url 'ver_encuestas' %}">Ver</a></li>
+                            <li><a class="dropdown-item" href="{% url 'crear_encuesta' %}">Crear</a></li>
                         </ul>
                     </li>
-                            {% endif %}
-                        {% endif %}
+                    {% endif %}
+                    {% endif %}
                     <!-- Opciones para tipos de usuario -->
                     {% if user.is_authenticated %}
-                        {% if user_type == 'admin' %}
-                            <li class="nav-item">
-                               <li class="nav-link"> Dashboard Admin</li>
-                            </li>
-                        {% elif user_type == 'company' %}
-                            <li class="nav-item">
-                                <li class="nav-link">Dashboard Empresa</li>
-                            </li>
-                        {% elif user_type == 'natural' %}
-                            <li class="nav-item">
-                                <li class="nav-link"> Dashboard Usuario Natural</li>
-                            </li>
-                        {% endif %}
+                    {% if user_type == 'admin' %}
+                    <li class="nav-item">
+                    <li class="nav-link"> Dashboard Admin</li>
+                    </li>
+                    {% elif user_type == 'company' %}
+                    <li class="nav-item">
+                    <li class="nav-link">Dashboard Empresa</li>
+                    </li>
+                    {% elif user_type == 'natural' %}
+                    <li class="nav-item">
+                    <li class="nav-link"> Dashboard Usuario Natural</li>
+                    </li>
+                    {% endif %}
                     {% endif %}
                 </ul>
                 {% if user.is_authenticated %}
-                    <span class="navbar-text me-3">Hola, {{ user.username }}</span>
-                    <a class="btn btn-outline-primary mx-3" href="{% url 'logout' %}">Cerrar sesión</a>
+                <span class="navbar-text me-3">Hola, {{ user.username }}</span>
+                <a class="btn btn-outline-primary mx-3" href="{% url 'logout' %}">Cerrar sesión</a>
                 {% else %}
-                    <a class="btn btn-outline-primary mx-3" href="{% url 'login' %}">Ingresar</a>
-                    <a class="btn btn-primary" href="{% url 'signup' %}">Registrar</a>
+                <a class="btn btn-outline-primary mx-3" href="{% url 'login' %}">Ingresar</a>
+                <a class="btn btn-primary" href="{% url 'signup' %}">Registrar</a>
                 {% endif %}
             </div>
         </div>
     </nav>
-    
+
 
     <!--carrusel-->
     <div id="carousel" class="carousel slide">
@@ -95,25 +96,25 @@
             <div class="carousel-item active">
                 <img src="/static/img/Incendiochile.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3 class="text-white">Incendio en Viña del mar</h3>
+                    <h3 class="text-white">¡Ayuda! Incendio en Viña del mar</h3>
                     <p>En una semana más de 90.000 personas perdieron sus hogares</p>
                     <button class="btn btn-primary">Más información</button>
                 </div>
             </div>
 
             <div class="carousel-item">
-                <img src="/static/img/Incendiochile.jpg" class="d-block w-100" alt="...">
+                <img src="/static/img/nuevonuevooooo.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3 class="text-white">Tsunami en Limache</h3>
+                    <h3 class="text-white">¡Desastre natural! Tsunami en la serena</h3>
                     <p>En un día 300 personas perdieron sus hogares de forma espontanea</p>
                     <button class="btn btn-primary">Más información</button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/static/img/Incendiochile.jpg" class="d-block w-100" alt="...">
+                <img src="/static/img/volcancitoooooooo.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3 class="text-white">Incendio en Viña del mar</h3>
-                    <p>En una semana más de 90.000 personas perdieron su hogar</p>
+                    <h3 class="text-white">¡Catastrofe! Explosión de volcan Villarica</h3>
+                    <p>En un dia 6.000 personas perdieron su hogar</p>
                     <button class="btn btn-primary">Más información</button>
                 </div>
             </div>
@@ -127,46 +128,60 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
     <div class="container my-4">
         <h2 class="text-center mb-4 fw-bold">Campañas destacadas</h2>
 
-        <div class="d-md-flex">
-            <div class="card mx-2 mb-3 mb-md-0">
-                <!-- Por defecto la card tendrá un espacio abajo de 3, esto para evitar que cada card este pegado uno del otro en caso de que la pagina sea vista desde un telefono, pero si es vista desde una pantalla grande con el md indicamos que el margen de abajo va a ser de 0 debido a que es innecesario-->
-                <img src="/static/img/lluvia.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Perdidas por lluvia 1</h5>
-                    <p class="card-text">Miles de personas a lo largo de Chile han sufrido perdida debido a las intesas
-                        lluvias.</p>
-                    <a class="btn btn-primary" href="{% url 'donar_producto' %}">Donar</a>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card mx-2 mb-3 mb-md-0">
+                    <img src="/static/img/lluvia.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Perdidas por lluvia</h5>
+                        <p class="card-text">"Miles de personas a lo largo de Chile han sufrido pérdida debido a
+                            las
+                            intensas lluvias, causando gran devastación y daños." </p>
+                        <a class="btn btn-primary" href="{% url 'donar_producto' %}">Donar</a>
+                        <a class="btn btn-primary" href="{% url 'donar_producto' %}">Donar dinero</a>
+
+                    </div>
                 </div>
             </div>
-            <div class="card mx-2 mb-3 mb-md-0">
-                <img src="/static/img/lluvia.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Perdidas por lluvia</h5>
-                    <p class="card-text">Miles de personas a lo largo de Chile han sufrido perdida debido a las intesas
-                        lluvias.</p>
-                    <button class="btn btn-primary">Donar</button>
+            <div class="col-md-3">
+                <div class="card mx-2 mb-3 mb-md-0">
+                    <img src="/static/img/MEgan.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Apoya a Megan Dominic Bustos</h5>
+                        <p class="card-text">"Nos falta mucho por llegar a la meta": Padre de Megan pide donar
+                            para
+                            reunir
+                            los $150 millones"
+                        </p>
+                        <button class="btn btn-primary">Donar</button>
+                    </div>
                 </div>
             </div>
-            <div class="card mx-2 mb-3 mb-md-0">
-                <img src="/static/img/lluvia.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Perdidas por lluvia</h5>
-                    <p class="card-text">Miles de personas a lo largo de Chile han sufrido perdida debido a las intesas
-                        lluvias.</p>
-                    <button class="btn btn-primary">Donar</button>
+            <div class="col-md-3">
+                <div class="card mx-2 mb-3 mb-md-0">
+                    <img src="/static/img/GONZALO BELL - Cuba-799.jpg.jfif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ayuda a que Magdalena pueda volver a caminar</h5>
+                        <p class="card-text">En 2022 Magdalena fue atropellada por un conductor borracho, quedó
+                            paraplejica
+                            el tratamiento para volver a caminar cuesta $100 millones.</p>
+                        <button class="btn btn-primary">Donar</button>
+                    </div>
                 </div>
             </div>
-            <div class="card mx-2 mb-3 mb-md-0">
-                <img src="/static/img/lluvia.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Perdidas por lluvia</h5>
-                    <p class="card-text">Miles de personas a lo largo de Chile han sufrido perdida debido a las intesas
-                        lluvias.</p>
-                    <button class="btn btn-primary">Donar</button>
+            <div class="col-md-3">
+                <div class="card mx-2 mb-3 mb-md-0">
+                    <img src="/static/img/donaciones-perritos.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Fundación huella animal</h5>
+                        <p class="card-text">La misión de fundación huellas es rescatar, rehabilitar y dar en
+                            adopción a
+                            animales que buscan un hogar.</p>
+                        <button class="btn btn-primary">Donar</button>
+                    </div>
                 </div>
             </div>
         </div>

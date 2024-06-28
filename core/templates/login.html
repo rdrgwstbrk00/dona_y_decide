@@ -13,7 +13,44 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="../Portafolio/home">
+            <img src="/static/img/image-7.png" alt="logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'campanas' %}">Campañas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                </li>
 
+            </ul>
+            {% if user.is_authenticated %}
+            <span class="navbar-text me-3">Hola, {{ user.username }}</span>
+            <a class="btn btn-outline-primary mx-3" href="{% url 'logout' %}">Cerrar sesión</a>
+        {% else %}
+            <a class="btn btn-outline-primary mx-3" href="{% url 'login' %}">Ingresar</a>
+            <a class="btn btn-primary" href="{% url 'signup' %}">Registrar</a>
+        {% endif %}
+        </div>
+    </div>
+</nav>
+
+  
 
 
   <div class="login-box">

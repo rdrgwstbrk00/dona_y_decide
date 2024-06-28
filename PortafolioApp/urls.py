@@ -15,8 +15,6 @@ urlpatterns = [
     path('', renderHome, name='index'),
     path('register/', renderRegister, name='register'),
     path('portal_pago/', renderPortalPago, name='portal_pago'),
-    
-
     path('encuestas/', renderEncuestas, name='encuestas'),
     path('productos/', renderProductos, name='productos'),
     path('campanas/', renderCampanas, name='campanas'),

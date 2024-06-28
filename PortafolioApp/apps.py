@@ -1,5 +1,5 @@
 from django.apps import AppConfig
-#instalar si o si flask y paypalrestsdk
+
 from flask import Flask, request, redirect, render_template
 import paypalrestsdk
 
@@ -11,7 +11,6 @@ paypalrestsdk.configure({
 })
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def donation_page():

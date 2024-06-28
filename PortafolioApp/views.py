@@ -39,6 +39,8 @@ def renderCampanas(request):
 def renderQuienes(request):
     return render(request, 'PortafolioApp/quienes.html')
 
+
+
 def renderFunciona(request):
     return render(request, 'PortafolioApp/funciona.html')
 

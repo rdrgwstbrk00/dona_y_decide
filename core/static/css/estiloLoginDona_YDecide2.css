@@ -1,3 +1,82 @@
+/* Estilo para el logo */
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #d4a373;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Estilo para el logo */
+.logo {
+    width: 80px;
+    border-radius: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #d4a373;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+
+
+.category {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    overflow: hidden;
+    text-align: center;
+    width: 370px;
+}
+
+.category a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.category img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.category h2 {
+    margin: 0;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+
+.logo {
+    width: 80px;
+    border-radius: 100%;
+}
+
+
 body {
     margin: 0;
     padding: 0; 

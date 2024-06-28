@@ -1,3 +1,4 @@
+
 /* Estilos para la sección "Quiénes Somos" */
 .about-image {
     margin-bottom: 20px;
@@ -7,22 +8,29 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
 }
 
 .about-text h3 {
-    color: #5f4b32; /* Color de texto beige oscuro */
+    color: #5f4b32;
+    /* Color de texto beige oscuro */
     margin-top: 20px;
 }
 
 .about-text p {
-    color: #7f6d4e; /* Color de texto beige medio */
+    color: #7f6d4e;
+    /* Color de texto beige medio */
     margin-bottom: 20px;
 }
 
 .container {
-    background-color: #f9f6f1; /* Fondo beige claro */
+    background-color: #f9f6f1;
+    /* Fondo beige claro */
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
 }
+
+
